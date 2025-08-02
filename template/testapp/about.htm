@@ -1,0 +1,72 @@
+{%extends 'testapp/base.htm' %}
+
+{%block title_block %}
+Home 
+{%endblock %}
+
+{%block body_block %}
+    <section id="inner-headline">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="inner-heading">
+              <h2>About us</h2>
+            </div>
+          </div>
+          <div class="span8">
+            <ul class="breadcrumb">
+              <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+              <li><a href="#">Pages</a><i class="icon-angle-right"></i></li>
+              <li class="active">About us</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="span10">
+            <h2>Welcome to <strong>advertisement System Cloud Based</strong></h2>
+           <p>Advertising is a marketing tactic involving paying for space to promote a product, service, or cause. The actual promotional messages are called advertisements, or ads for short. The goal of advertising is to reach people most likely to be willing to pay for a company’s products or services and entice them to buy.</p>
+          </div>
+          
+        </div>
+        <!-- divider -->
+        <div class="row">
+          <div class="span12">
+            <div class="solidline">
+            </div>
+          </div>
+        </div>
+        <!-- end divider -->
+        <div class="row">
+          <div class="span12">
+            <h4>Our Team Members</h4>
+          </div>
+          {%for m in members %}
+          <div class="span3">
+              <img src="{{m.pic.url}}" alt="{{m.pic.url}}"  style="height: 250px;" class="img-polaroid" />
+              <div class="roles">
+                <p class="lead">
+                  <strong>{{m.name}} - {{m.role}}</strong>
+                </p>
+                
+              </div>
+            </div>
+          {%endfor %}
+          
+          
+        </div>
+        <!-- divider -->
+        <div class="row">
+          <div class="span12">
+            <div class="solidline">
+            </div>
+          </div>
+        </div>
+        <!-- end divider -->
+        
+      </div>
+    </section>
+   {%endblock %}

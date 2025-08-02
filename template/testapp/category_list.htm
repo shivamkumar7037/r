@@ -1,0 +1,76 @@
+{%extends 'testapp/base.htm' %}
+{%load static %}
+{%block title_block %}
+Home 
+{%endblock %}
+
+{%block body_block %}
+    
+    
+    <section id="content">
+      <div class="container">
+       
+        <!-- divider -->
+        
+        <!-- end divider -->
+        <!-- Portfolio Projects -->
+        <div class="row">
+          <div class="span12">
+            <h4 class="heading">Category :  <strong>{{cats}}</strong></h4>
+            <div class="row">
+              <section id="projects">
+                <ul id="thumbs" class="portfolio">
+                  <!-- Item Project and Filter Name -->
+                  {%for a in ads %}
+                  <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
+                      <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                      <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="{{a.brand}}" href="/detail/{{a.id}}">
+              <span class="overlay-img"></span>
+              <span class="overlay-img-thumb font-icon-plus"></span>
+              </a>
+                      <!-- Thumb Image and Description -->
+                      <img src="{{a.pic.url}}" alt="{{a.pic.url}}"  style="height: 200px;">
+                    </li>
+
+                  {%endfor %}
+                  <!-- End Item Project -->
+                  <!-- Item Project and Filter Name -->
+                 
+                  <!-- End Item Project -->
+                  <!-- Item Project and Filter Name -->
+                  
+                  <!-- End Item Project -->
+                  <!-- Item Project and Filter Name -->
+                
+                  <!-- End Item Project -->
+                  <!-- Item Project and Filter Name -->
+                
+                  <!-- End Item Project -->
+                  
+                  <!-- End Item Project -->
+                  <!-- Item Project and Filter Name -->
+                
+                  <!-- End Item Project -->
+                  <!-- Item Project and Filter Name -->
+                 
+                  <!-- End Item Project -->
+                </ul>
+              </section>
+            </div>
+          </div>
+        </div>
+        <!-- End Portfolio Projects -->
+        <!-- divider -->
+        <div class="row">
+          <div class="span12">
+            <div class="solidline">
+            </div>
+          </div>
+        </div>
+        <!-- end divider -->
+        
+      </div>
+    </section>
+   
+    {%endblock %}
+    

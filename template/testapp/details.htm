@@ -1,0 +1,66 @@
+{%extends 'testapp/base.htm' %}
+
+{%block title_block %}
+Home 
+{%endblock %}
+
+{%block body_block %}
+    <section id="inner-headline">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="inner-heading">
+              <h2>About {{ads.brand}}</h2>
+            </div>
+          </div>
+          <div class="span8">
+            <ul class="breadcrumb">
+              <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+              <li><a href="#">Portfolio</a><i class="icon-angle-right"></i></li>
+              <li class="active">{{ads.brand}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="span8">
+            <article>
+              <div class="top-wrapper">
+               
+                <!-- start flexslider -->
+                <div class="flexslider">
+                  <img src="{{ads.pic.url}}" alt="{{ads.pic.url}}"  class="img-rounded img-thumnail" style="width: 800px; height: 400px;">
+                </div>
+                <!-- end flexslider -->
+              </div>
+              
+            </article>
+          </div>
+          <div class="span4">
+            <aside class="right-sidebar">
+              <div class="widget">
+                    <div class="post-heading">
+                            <h3><a href="#">Welcome to {{ads.brand}}</a></h3>
+                          </div>
+                <ul class="folio-detail">
+                  <li><label>Category :</label> {{ads.category}}</li>
+                  <li><label>Brand :</label>{{ads.brand}}</li>
+                  <li><label>Mobile :</label>{{ads.mobile}}</li>
+                  <li><label>Email :</label><a href="#">{{ads.email}}</a></li>
+                </ul>
+              </div>
+              <div class="widget">
+                <h5 class="widgetheading">About</h5>
+                <p>
+                 {{ads.about}}
+                </p>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+    {%endblock %}

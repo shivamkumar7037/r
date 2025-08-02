@@ -1,0 +1,64 @@
+{%extends 'testapp/base.htm' %}
+
+{%load crispy_forms_tags %}
+{%block title_block %}
+Contact Us
+{%endblock %}
+
+{%block body_block %}
+    <!-- end header -->
+    <section id="inner-headline">
+      <div class="container">
+        <div class="row">
+          <div class="span4">
+            <div class="inner-heading">
+              <h2>Get in touch</h2>
+            </div>
+          </div>
+          <div class="span8">
+            <ul class="breadcrumb">
+              <li><a href="#"><i class="icon-home"></i></a><i class="icon-angle-right"></i></li>
+              <li class="active">Contact</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="content">
+      
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <h4>Get in touch with us by filling <strong>contact form below</strong></h4>
+            {{msg}}
+            <form  method="post" role="form" class="contactForm">
+              {%csrf_token %}
+              <div id="sendmessage">Your message has been sent. Thank you!</div>
+              <div id="errormessage"></div>
+
+              <div class="row">
+                <div class="span3 form-group">
+                  {{form.name|as_crispy_field}}
+                </div>
+                <div class="span3 form-group">
+                  {{form.email|as_crispy_field}}
+                </div>
+                <div class="span3 form-group">
+                  {{form.mobile|as_crispy_field}}
+                </div>
+                <div class="span3 form-group">
+                  {{form.subject|as_crispy_field}}
+                </div>
+                <div class="span12 margintop10 form-group">
+                  {{form.message|as_crispy_field}}
+                  <p class="text-center">
+                    <button class="btn btn-large btn-theme margintop10" type="submit">Submit message</button>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+   {%endblock %}
